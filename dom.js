@@ -1,7 +1,29 @@
-let items=document.querySelectorAll('.list-group-item');
-items[1].style.color='green';
-let oddItems=document.querySelectorAll('li:nth-child(odd)');
-for(let i=0;i<oddItems.length;i++)
-{
-    oddItems[i].style.backgroundColor='green';
-}
+let itemList=document.querySelector('#items');
+itemList.parentElement.style.backgroundColor='grey';
+itemList.lastElementChild.textContent='Hello 4';
+console.log(itemList.lastChild);
+itemList.firstElementChild.textContent='Hello 1';
+console.log(itemList.firstChild);
+console.log(itemList.nextSibling);
+console.log(itemList.nextElementSibling);
+console.log(itemList.previousSibling);
+console.log(itemList.previousElementSibling);
+itemList.previousElementSibling.style.color='green';
+let newDiv=document.createElement('div');
+newDiv.className='hi';
+newDiv.id='hii';
+newDiv.setAttribute('title','hi div');
+let newDivText=document.createTextNode('HEllo');
+newDiv.appendChild(newDivText);
+console.log(newDiv);
+let container=document.querySelector('header .container');
+let h1=document.querySelector('header h1');
+container.insertBefore(newDiv,h1);
+let newItem=document.createElement('div');
+newItem.className='hello';
+newItem.id='hey';
+newItem.setAttribute('title','hey div');
+let newItemText=document.createTextNode('HEllo');
+newItem.appendChild(newItemText);
+console.log(newItem);
+itemList.insertBefore(newItem,itemList.firstElementChild);
